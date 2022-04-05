@@ -7,6 +7,7 @@ const roomMgr = require('./roomManger');
 const registerRoomHandler = require("./eventHandler/roomHandler");
 const registerChatHandler = require("./eventHandler/chatHandler");
 
+const port = process.env.PORT || 8080;
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -34,4 +35,6 @@ const onRoomConnection = ( socket ) => {
 roomNsp.on("connection" , onRoomConnection);
 
 
-io.listen(8080);
+httpServer.listen(port , () => {
+  console.log(`SERVER IS RUNNING IN PORT ${port}`);
+});
