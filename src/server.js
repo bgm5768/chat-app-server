@@ -1,3 +1,4 @@
+const express = require("express");
 const { Server } = require("socket.io");
 const { createServer } = require("http");
 
@@ -6,7 +7,8 @@ const roomMgr = require('./roomManger');
 const registerRoomHandler = require("./eventHandler/roomHandler");
 const registerChatHandler = require("./eventHandler/chatHandler");
 
-const httpServer = createServer();
+const app = express();
+const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
     origin: ["http://112.171.31.123:3002" , "https://nonamed.vercel.app/"],
