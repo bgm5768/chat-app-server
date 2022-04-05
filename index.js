@@ -2,10 +2,10 @@ const express = require("express");
 const { Server } = require("socket.io");
 const { createServer } = require("http");
 
-const roomMgr = require('./roomManger');
+const roomMgr = require('./src/roomManger');
 
-const registerRoomHandler = require("./eventHandler/roomHandler");
-const registerChatHandler = require("./eventHandler/chatHandler");
+const registerRoomHandler = require("./src/eventHandler/roomHandler");
+const registerChatHandler = require("./src/eventHandler/chatHandler");
 
 const port = process.env.PORT || 8080;
 const app = express();
