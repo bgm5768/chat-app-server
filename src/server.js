@@ -9,7 +9,7 @@ const registerChatHandler = require("./eventHandler/chatHandler");
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://112.171.31.123:3002",
+    origin: ["http://112.171.31.123:3002" , "https://nonamed.vercel.app/"],
     // or with an array of origins
     // origin: ["https://my-frontend.com", "https://my-other-frontend.com", "http://localhost:3000"],
     credentials: true
